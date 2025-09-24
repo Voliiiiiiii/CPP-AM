@@ -11,5 +11,7 @@ public:
     int getX() const;
 
     int getY() const;
+
+    void print() const;
 };
 #endif /* PONT_H */

@@ -1,4 +1,6 @@
 #include "Point.h"
+#include <iostream>
+using namespace std;
 
 Point::Point(int x, int y) {
     if (x >= 0 && x <= 2000 && y >= 0 && y <= 2000) {
@@ -16,4 +18,8 @@ int Point::getX() const {
 
 int Point::getY() const {
     return y;
+}
+
+void Point::print() const {
+    cout<<"("<<x<<","<<y<<")"<<endl;    
 }
