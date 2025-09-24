@@ -1,5 +1,6 @@
 #include "Point.h"
 #include <iostream>
+#include <cmath>
 using namespace std;
 
 Point::Point(int x, int y) {
@@ -22,4 +23,10 @@ int Point::getY() const {
 
 void Point::print() const {
     cout<<"("<<x<<","<<y<<")"<<endl;    
+}
+
+double distance(const Point& a, const Point& b){
+    double halox = a.getX() -b.getX();
+    double haloy = a.getY() -b.getY(); 
+    return sqrt(halox*halox+haloy*haloy);
 }

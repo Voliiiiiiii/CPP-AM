@@ -13,5 +13,10 @@ public:
     int getY() const;
 
     void print() const;
+
+    
 };
+
+double distance(const Point& a, const Point& b);
+
 #endif /* PONT_H */
