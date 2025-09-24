@@ -30,3 +30,8 @@ double distance(const Point& a, const Point& b){
     double haloy = a.getY() -b.getY(); 
     return sqrt(halox*halox+haloy*haloy);
 }
+
+bool isSquare(const Point& a, const Point& b, const Point& c, const Point&d){
+    return (distance(a,b) == distance(b,c) && distance(b,c) == distance(c,d) && distance(c,d)== distance(d,a));
+}
+

@@ -20,5 +20,17 @@ int main(int argc, char **argv) {
 
     cout << "distance between p1 and p2: " <<distance(p1,p2) <<endl;
 
+
+    Point po1(0,0);
+    Point po2(0,1);
+    Point po3(1,1);
+    Point po4(1,0);
+
+    if(isSquare(po1,po2,po3,po4)){
+        cout<<"kocka"<<endl;
+    }else{
+        cout<<"nem kocka"<<endl;
+    }
+
     return 0;
 }
