@@ -3,6 +3,8 @@
 #include <cmath>
 #include <fstream>
 #include <vector>
+#include <random>
+#include <ctime>
 using namespace std;
 
 Point::Point(int x, int y) {
@@ -62,6 +64,18 @@ void testIsSquare(const char * filename){
 
 }
 
-Point* createArray(int numPoints){}
+Point* createArray(int numPoints){
+    Point* points = new Point[numPoints];
+    srand(time(0));
+    
+    for(int i =0; i< numPoints; i++){
+        int xrand = rand()%2000;
+        int yrand = rand()%2000;
+        Point pont(xrand,yrand);
+        points[i]=pont;
+    }
+    return points;
+
+}
 
 

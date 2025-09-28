@@ -32,7 +32,9 @@ int main(int argc, char **argv) {
         cout<<"nem kocka"<<endl;
     }
     //testIsSquare("Be.txt");
-    
-
+    Point *pontook =createArray(10);
+    for(int i = 0; i< 10; i++){
+        pontook[i].print();
+    }
     return 0;
 }
