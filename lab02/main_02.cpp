@@ -31,6 +31,8 @@ int main(int argc, char **argv) {
     }else{
         cout<<"nem kocka"<<endl;
     }
+    //testIsSquare("Be.txt");
+    
 
     return 0;
 }

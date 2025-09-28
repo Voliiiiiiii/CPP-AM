@@ -1,6 +1,8 @@
 #include "Point.h"
 #include <iostream>
 #include <cmath>
+#include <fstream>
+#include <vector>
 using namespace std;
 
 Point::Point(int x, int y) {
@@ -34,4 +36,32 @@ double distance(const Point& a, const Point& b){
 bool isSquare(const Point& a, const Point& b, const Point& c, const Point&d){
     return (distance(a,b) == distance(b,c) && distance(b,c) == distance(c,d) && distance(c,d)== distance(d,a));
 }
+
+void testIsSquare(const char * filename){
+    ifstream file(filename);
+    if(!file){
+        cout<<"Nem sikerult megnyitni bro"<<endl;
+        return;
+    }
+
+    for(int j = 0; j<10; j++){
+        vector<Point> pontok;
+        int x, y;
+        for(int i =0; i< 4; i++){
+            file>>x;
+            file>>y;
+            Point pont(x,y);
+            cout<<"Pont"<<i+1<<": "<<x<<" "<< y<<endl;
+            pontok.push_back(pont);    
+        }
+        if(isSquare(pontok[0],pontok[1],pontok[2],pontok[3])){
+            cout<<"KOCKAA"<<endl;
+        }else{cout<<"nem kocki :v"<<endl;}
+        pontok.clear();
+    }
+
+}
+
+Point* createArray(int numPoints){}
+
 
