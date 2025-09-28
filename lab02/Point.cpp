@@ -6,6 +6,7 @@
 #include <random>
 #include <ctime>
 #include <utility>
+#include <algorithm>
 using namespace std;
 
 Point::Point(int x, int y) {
@@ -118,6 +119,17 @@ pair<Point, Point> farthestPoints(Point* points, int numPoints){
         }
     }
     return eredmeny;
+}
+
+void sortPoints(Point* points, int numPoints){
+    sort(points,points+numPoints, [](const Point &a, const Point &b){
+        if(a.getX() != b.getX()){
+            return a.getX() < b.getX();
+        }else{
+            return a.getY() < b.getY();
+        }
+        });
+    printArray(points,numPoints);
 }
 
 

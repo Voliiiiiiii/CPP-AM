@@ -44,12 +44,20 @@ int main(int argc, char **argv) {
     pair<Point,Point> legkozelebbiek = closestPoints(pontook,10);
     legkozelebbiek.first.print();
     legkozelebbiek.second.print(); 
-    //9es
     cout<<endl;
+    //9es
+    
     pair<Point,Point> legtavolabbiak = farthestPoints(pontook,10);
     legtavolabbiak.first.print();
     legtavolabbiak.second.print();
+    cout<<endl;
 
+     //10es
+    cout<<"sort elott:"<<endl;
+    printArray(pontook,10);
+    cout<<"sort utan:"<<endl;
+    sortPoints(pontook,10);
+    cout<<endl;
 
     return 0;
 }

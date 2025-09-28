@@ -32,6 +32,8 @@ std::pair<Point, Point> closestPoints(Point* points, int numPoints);
 
 std::pair<Point, Point> farthestPoints(Point* points, int numPoints);
 
+void sortPoints(Point* points, int numPoints);
+
 
 
 #endif /* PONT_H */
