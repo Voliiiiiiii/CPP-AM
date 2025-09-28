@@ -34,6 +34,10 @@ std::pair<Point, Point> farthestPoints(Point* points, int numPoints);
 
 void sortPoints(Point* points, int numPoints);
 
+Point* farthestPointsFromOrigin(Point* points, int numPoints);
+
+void deleteArray(Point* points);
+
 
 
 #endif /* PONT_H */

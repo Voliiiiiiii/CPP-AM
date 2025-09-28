@@ -132,6 +132,24 @@ void sortPoints(Point* points, int numPoints){
     printArray(points,numPoints);
 }
 
+Point* farthestPointsFromOrigin(Point* points, int numPoints){
+    Point origo(0,0);
+    Point* eredmeny = nullptr;
+    double distancee =0;
+    for(int i = 0; i < numPoints; i++){
+        double newdist = distance(origo, points[i]);
+        if(newdist > distancee){
+            distancee = newdist;
+            eredmeny = &points[i];
+        }
+    }
+    return eredmeny;
+}
+
+void deleteArray(Point* points) {
+    delete[] points;
+}
+
 
 
 

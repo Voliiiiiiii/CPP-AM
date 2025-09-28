@@ -36,12 +36,12 @@ int main(int argc, char **argv) {
 
     //6-7es
 
-    Point *pontook =createArray(10);
-    printArray(pontook,10);
+    Point *pontook =createArray(10 );
+    printArray(pontook,10 );
 
      //8as
     cout<<endl;
-    pair<Point,Point> legkozelebbiek = closestPoints(pontook,10);
+    pair<Point,Point> legkozelebbiek = closestPoints(pontook,10 );
     legkozelebbiek.first.print();
     legkozelebbiek.second.print(); 
     cout<<endl;
@@ -54,10 +54,16 @@ int main(int argc, char **argv) {
 
      //10es
     cout<<"sort elott:"<<endl;
-    printArray(pontook,10);
+    printArray(pontook,10 );
     cout<<"sort utan:"<<endl;
-    sortPoints(pontook,10);
-    cout<<endl;
+    sortPoints(pontook,10 );
+    cout<<endl<<endl;;
 
+    //11-es
+    Point *pontocska = farthestPointsFromOrigin(pontook,10 );
+    pontocska->print();
+
+    //12-es
+    deleteArray(pontook);
     return 0;
 }
