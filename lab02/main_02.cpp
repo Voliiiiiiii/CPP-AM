@@ -1,5 +1,6 @@
 #include <iostream>
 #include "Point.h"
+#include <utility>
 using namespace std;
 
 int main(int argc, char **argv) {
@@ -32,9 +33,23 @@ int main(int argc, char **argv) {
         cout<<"nem kocka"<<endl;
     }
     //testIsSquare("Be.txt");
+
+    //6-7es
+
     Point *pontook =createArray(10);
-    for(int i = 0; i< 10; i++){
-        pontook[i].print();
-    }
+    printArray(pontook,10);
+
+     //8as
+    cout<<endl;
+    pair<Point,Point> legkozelebbiek = closestPoints(pontook,10);
+    legkozelebbiek.first.print();
+    legkozelebbiek.second.print(); 
+    //9es
+    cout<<endl;
+    pair<Point,Point> legtavolabbiak = farthestPoints(pontook,10);
+    legtavolabbiak.first.print();
+    legtavolabbiak.second.print();
+
+
     return 0;
 }

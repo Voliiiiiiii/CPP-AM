@@ -5,6 +5,7 @@
 #include <vector>
 #include <random>
 #include <ctime>
+#include <utility>
 using namespace std;
 
 Point::Point(int x, int y) {
@@ -77,5 +78,48 @@ Point* createArray(int numPoints){
     return points;
 
 }
+
+void printArray(Point* points, int numPoints){
+    for(int i = 0; i< numPoints; i++){
+        points[i].print();
+    }
+    return;
+}
+
+pair<Point, Point> closestPoints(Point* points, int numPoints){
+    pair<Point,Point> eredmeny;
+    double leastdistance =99999999999;
+
+    for(int i = 0; i<numPoints; i++){
+        for(int j = 0; j<numPoints; j++){
+            if(i == j){continue;}
+            double curentdistnc = distance(points[i],points[j]);
+            if(curentdistnc<leastdistance){
+                leastdistance=curentdistnc;
+                eredmeny = make_pair(points[i],points[j]);
+            }
+        }
+    }
+    return eredmeny;
+}
+
+pair<Point, Point> farthestPoints(Point* points, int numPoints){
+    pair<Point,Point> eredmeny;
+    double leastdistance =0;
+
+    for(int i = 0; i<numPoints; i++){
+        for(int j = 0; j<numPoints; j++){
+            if(i == j){continue;}
+            double curentdistnc = distance(points[i],points[j]);
+            if(curentdistnc>leastdistance){
+                leastdistance=curentdistnc;
+                eredmeny = make_pair(points[i],points[j]);
+            }
+        }
+    }
+    return eredmeny;
+}
+
+
 
 

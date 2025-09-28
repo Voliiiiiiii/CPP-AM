@@ -1,5 +1,6 @@
 #ifndef POINT_H
 #define POINT_H
+#include <utility>
 
 class Point {
 private:
@@ -24,6 +25,13 @@ bool isSquare(const Point& a, const Point& b, const Point& c, const Point&d);
 void testIsSquare(const char * filename);
 
 Point* createArray(int numPoints);
+
+void printArray(Point* points, int numPoints);
+
+std::pair<Point, Point> closestPoints(Point* points, int numPoints);
+
+std::pair<Point, Point> farthestPoints(Point* points, int numPoints);
+
 
 
 #endif /* PONT_H */
