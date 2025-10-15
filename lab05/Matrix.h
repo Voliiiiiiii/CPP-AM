@@ -8,25 +8,25 @@ using namespace std;
 
 class Matrix {
 public:
- // Konstruktorok és destruktor
+ // Konstruktorok és destruktor-kesz
     Matrix(int rows = 10, int cols = 10);
     Matrix(const Matrix& other); // Copy ctor
     Matrix(Matrix&& other) noexcept; // Move ctor
     ~Matrix() = default; // vector automatikusan felszabadítja
 
 
- // Értékadás
+ // Értékadás-kesz
     Matrix& operator=(const Matrix& other); // Copy assignment
     Matrix& operator=(Matrix&& other) noexcept; // Move assignment
 
- // Feltöltő metódusok
+ // Feltöltő metódusok-kesz
     void fillMatrix(double value);
     void randomMatrix(int a, int b);
 
- // Kiíratás
+ // Kiíratás-kesz
     void printMatrix(std::ostream& os = std::cout) const;
 
- // Lekérdezések
+ // Lekérdezések-kesz
     bool isSquare() const { return mRows == mCols; }
     int getRows() const { return mRows; }
     int getCols() const { return mCols; }
