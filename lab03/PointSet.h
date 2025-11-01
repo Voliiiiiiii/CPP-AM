@@ -11,7 +11,7 @@ class PointSet{
  int n;  //különböző pontok száma
  vector<double> distances; //pontok kozotti tavolsagok
  void computeDistances(); //segédfüggvény, amely feltölti a distances vektort
- 
+
 public:
  //konstruktor: előállítja a points vektort
  //kiszámítja a pontok közötti távolságokat (distances vektor),
