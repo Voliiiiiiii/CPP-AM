@@ -3,6 +3,7 @@
 #include <cstdlib>
 #include <ctime>
 #include <iomanip>
+#include <stdexcept>
 using namespace std;
 
 //konstruktorok - kesz
@@ -38,7 +39,7 @@ Matrix::Matrix& operator=(const Matrix& other){
 }
 
 Matrix& operator=(Matrix&& other) noexcept{
-        if (this == &other)
+    if (this == &other)
         return *this;
 
     mCols = other.mCols;
@@ -66,7 +67,7 @@ void Matrix::fillMatrix(double value){
 
 
 
-//operatorok
+//operatorok kesz
 
 friend Matrix operator+(const Matrix& x, const Matrix& y) {
     if (x.mRows != y.mRows || x.mCols != y.mCols) {
@@ -79,8 +80,21 @@ friend Matrix operator+(const Matrix& x, const Matrix& y) {
     return result;
 }
 
-friend Matrix operator*(const Matrix& x, const Matrix& y){
+Matrix operator*(const Matrix& A, const Matrix& B) {
+    if (A.cols() != B.rows())
+        throw std::invalid_argument("Matrix dimensions do not match for multiplication!");
+    size_t n = A.rows();
+    size_t m = A.cols();
+    size_t p = B.cols();
 
+    Matrix C(n, p);
+
+    for (size_t i = 0; i < n; ++i)
+        for (size_t j = 0; j < p; ++j)
+            for (size_t k = 0; k < m; ++k)
+                C[i][j] += A[i][k] * B[k][j];
+
+    return C;
 }
 
 
@@ -92,11 +106,22 @@ friend std::istream& operator>>(std::istream& is, Matrix& mat){
     mat.printMatrix(is);
     return is;    
 }
-//INDEXELES
+//INDEXELES 
 
 double* Matrix::operator[](int row){
+    if(row<0){throw out_of_range("out of range");}
     return &mElements[rows*mCols];
 }
 const double* Matrix::operator[](int row) const{
+    if(row<0){throw out_of_range("out of range");}
     return &mElements[rows*mCols];
+}
+
+double& operator()(int row, int col){
+    if(row<0||col<0||row>mRows||cols>mCols){throw out_of_range("matrix out of rangeeee");   }
+    return matrix[mRows*col+row];
+}
+const double& operator()(int row, int col) const{
+    if(row<0||col<0||row>mRows||cols>mCols){throw out_of_range("matrix out of rangeeee");}
+    return matrix[mRows*col+row];
 }

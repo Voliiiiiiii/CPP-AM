@@ -16,6 +16,7 @@ public:
  //konstruktor: előállítja a points vektort
  //kiszámítja a pontok közötti távolságokat (distances vektor),
  PointSet( int n = 100 );
+ PointSet(){};
  //maximum kiválasztás a tavolsag vektorból
  double maxDistance() const;
  //minimum kiválasztás a tavolsag vektorból
