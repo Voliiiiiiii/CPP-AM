@@ -1,6 +1,14 @@
 #include <iostream>
+#include <string>
+#include <vector>
+#include "Settlment.h"
+#include "SettlmentStatisticsImpl.h"
 
 int main() {
-    std::cout << "Hello, Lab_11" << std::endl;
+    Settlement kezdi("kezdi","CV",20000);
+    cout<<kezdi<<endl;
+
+    SettelmentStatisticsImpl impl;
+    cout<<impl.numSettlementsByCounty("VN")<<endl;
     return 0;
 }
